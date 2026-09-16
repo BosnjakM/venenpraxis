@@ -91,9 +91,8 @@ p { margin: 0 0 1.1em; }
     position: relative; background-size: cover; background-position: center;
     background-attachment: fixed; display: flex; align-items: flex-start; min-height: 90vh;
 }
-.hero::before { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(255,255,255,.9) 0%, rgba(255,255,255,.72) 35%, rgba(255,255,255,.45) 55%, rgba(255,255,255,.12) 74%, rgba(255,255,255,0) 84%); }
-.hero__inner { position: relative; max-width: none; padding: 72px 0 72px 160px; width: 100%; }
-.hero__box { max-width: 620px; text-shadow: 0 1px 3px rgba(255,255,255,.6); }
+.hero__inner { position: relative; max-width: var(--maxw); margin: 0 auto; padding: 72px 22px; width: 100%; }
+.hero__box { max-width: 560px; margin-left: auto; text-shadow: 0 1px 3px rgba(255,255,255,.6); }
 .hero__box .btn { background: rgba(255,255,255,.75); text-shadow: none; }
 .hero__box .btn:hover { background: var(--navy); }
 .hero h1 { margin-bottom: .2em; letter-spacing: -.01em; font-weight: 800; color: #14223d; }
@@ -294,5 +293,5 @@ p { margin: 0 0 1.1em; }
     .cards, .team, .sidebar { grid-template-columns: 1fr; }
     body { font-size: 16px; }
     .hero { min-height: 78vh; }
-    .hero__inner { padding: 40px 0 40px 22px; }
+    .hero__inner { padding: 40px 22px; }
 }
