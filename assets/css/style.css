@@ -91,7 +91,7 @@ p { margin: 0 0 1.1em; }
     position: relative; background-size: cover; background-position: center;
     background-attachment: fixed; display: flex; align-items: flex-start; min-height: 90vh;
 }
-.hero__inner { position: relative; max-width: none; margin: 0 auto; padding: 72px 56px; width: 100%; }
+.hero__inner { position: relative; max-width: none; margin: 0 auto; padding: 72px 20px 72px 56px; width: 100%; }
 .hero__box { max-width: 560px; margin-left: auto; text-shadow: 0 1px 3px rgba(255,255,255,.6); }
 .hero__box .btn { background: rgba(255,255,255,.75); text-shadow: none; }
 .hero__box .btn:hover { background: var(--navy); }
