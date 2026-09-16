@@ -1,11 +1,13 @@
 {
-  "functions": {
-    "*.php": {
-      "runtime": "vercel-php@0.7.4",
-      "includeFiles": "includes/**"
-    }
-  },
-  "rewrites": [
-    { "source": "/", "destination": "/index.php" }
+  "builds": [
+    { "src": "*.php", "use": "vercel-php@0.7.4", "config": { "includeFiles": "includes/**" } },
+    { "src": "assets/**", "use": "@vercel/static" },
+    { "src": "robots.txt", "use": "@vercel/static" },
+    { "src": "sitemap.xml", "use": "@vercel/static" },
+    { "src": "llms.txt", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "handle": "filesystem" },
+    { "src": "/", "dest": "/index.php" }
   ]
 }
