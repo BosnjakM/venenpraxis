@@ -99,7 +99,7 @@ p { margin: 0 0 1.1em; }
 .hero__sub { font-size: 1.35rem; font-weight: 700; color: #14223d; margin-bottom: 1.1em; }
 .hero__creds { margin: 0 0 1.1em; color: #26324c; font-weight: 600; }
 .hero__creds b { color: #14223d; }
-.hero__spec { font-weight: 800; color: #9e2318; font-size: 1.15rem; margin-bottom: 1.4em; }
+.hero__spec { font-weight: 800; color: #e2231a; font-size: 1.15rem; margin-bottom: 1.4em; text-shadow: 0 1px 4px rgba(0,0,0,.35), 0 1px 3px rgba(255,255,255,.4); }
 
 /* ---------- Sektionen ---------- */
 .section { padding: 72px 0; }
