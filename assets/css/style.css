@@ -6,8 +6,8 @@
 :root {
     --navy:      #20365f;   /* Überschriften */
     --navy-dark: #182a4a;
-    --red:       #c0392b;   /* Akzent / aktive Links */
-    --red-dark:  #a5312400;
+    --red:       #e10f28;   /* Akzent / aktive Links (wie Original) */
+    --red-dark:  #b70c20;
     --body:      #55606f;
     --muted:     #8b95a3;
     --line:      #e6e9ef;
@@ -60,7 +60,7 @@ p { margin: 0 0 1.1em; }
 }
 .header.is-scrolled { box-shadow: var(--shadow-sm); }
 .header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 116px; gap: 20px; }
-.header__logo img { height: 92px; width: auto; }
+.header__logo img { height: 104px; width: auto; }
 
 .nav__list { list-style: none; display: flex; align-items: center; gap: 4px; margin: 0; padding: 0; }
 .nav__item { position: relative; }
@@ -91,15 +91,15 @@ p { margin: 0 0 1.1em; }
     position: relative; background-size: cover; background-position: center;
     background-attachment: fixed; display: flex; align-items: flex-start; min-height: 90vh;
 }
-.hero__inner { position: relative; max-width: none; margin: 0 auto; padding: 72px 20px 72px 56px; width: 100%; }
-.hero__box { max-width: 560px; margin-left: auto; text-shadow: 0 1px 3px rgba(255,255,255,.6); }
-.hero__box .btn { background: rgba(255,255,255,.75); text-shadow: none; }
+.hero__inner { position: relative; max-width: none; margin: 0 auto; padding: 40px 20px 72px 56px; width: 100%; }
+.hero__box { max-width: 850px; margin-left: auto; margin-right: -20px; text-shadow: 0 1px 3px rgba(255,255,255,.6); }
+.hero__box .btn { background: transparent; text-shadow: none; }
 .hero__box .btn:hover { background: var(--navy); }
-.hero h1 { margin-bottom: .2em; letter-spacing: -.01em; font-weight: 800; color: #14223d; }
+.hero h1 { margin-bottom: .2em; letter-spacing: -.01em; font-weight: 800; color: #14223d; font-size: clamp(1.7rem, 3.3vw, 2.4rem); }
 .hero__sub { font-size: 1.35rem; font-weight: 700; color: #14223d; margin-bottom: 1.1em; }
 .hero__creds { margin: 0 0 1.1em; color: #26324c; font-weight: 600; }
 .hero__creds b { color: #14223d; }
-.hero__spec { font-weight: 800; color: #e2231a; font-size: 1.15rem; margin-bottom: 1.4em; text-shadow: 0 1px 4px rgba(0,0,0,.35), 0 1px 3px rgba(255,255,255,.4); }
+.hero__spec { font-family: "Roboto Slab", serif; font-weight: 700; color: #0c1e72; font-size: 1.15rem; margin-bottom: 1.4em; text-shadow: 0 0 9px rgba(255,255,255,1); }
 
 /* ---------- Sektionen ---------- */
 .section { padding: 72px 0; }
@@ -109,17 +109,18 @@ p { margin: 0 0 1.1em; }
 
 /* ---------- Behandlungskarten ---------- */
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
-.card { background: #fff; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; }
+.card { background: var(--red); border: none; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .2s, transform .2s; box-shadow: var(--shadow-sm); }
 .card:hover { box-shadow: var(--shadow); transform: translateY(-4px); }
 .card__media { aspect-ratio: 4/3; overflow: hidden; }
 .card__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
 .card:hover .card__media img { transform: scale(1.05); }
-.card__body { padding: 22px 24px 26px; display: flex; flex-direction: column; flex: 1; }
-.card__body h3 { color: var(--navy); margin-bottom: 12px; }
-.card__list { list-style: none; padding: 0; margin: 0 0 20px; }
-.card__list li { padding: 5px 0 5px 20px; position: relative; color: var(--body); }
-.card__list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; background: var(--red); border-radius: 50%; }
-.card .btn { margin-top: auto; align-self: flex-start; }
+.card__body { padding: 24px 26px 28px; display: flex; flex-direction: column; flex: 1; background: var(--red); color: #fff; }
+.card__body h3 { color: #fff; margin-bottom: 14px; }
+.card__list { list-style: none; padding: 0; margin: 0 0 22px; }
+.card__list li { padding: 5px 0 5px 20px; position: relative; color: #fff; }
+.card__list li::before { content: ''; position: absolute; left: 0; top: 13px; width: 7px; height: 7px; background: #fff; border-radius: 50%; }
+.card .btn { margin-top: auto; align-self: flex-start; background: #fff; border-color: #fff; color: var(--navy); text-shadow: none; }
+.card .btn:hover { background: rgba(255,255,255,.88); color: var(--navy); box-shadow: 0 8px 20px rgba(0,0,0,.18); }
 
 /* ---------- Kontakt-Band ---------- */
 .contactband { background: var(--navy); color: #dfe6f2; }
@@ -271,7 +272,7 @@ p { margin: 0 0 1.1em; }
 @media (max-width: 760px) {
     .nav-toggle { display: flex; }
     .header__inner { min-height: 88px; }
-    .header__logo img { height: 66px; }
+    .header__logo img { height: 74px; }
     .nav {
         position: fixed; inset: 88px 0 auto 0; background: #fff; border-bottom: 1px solid var(--line);
         max-height: 0; overflow: hidden; transition: max-height .3s ease; box-shadow: var(--shadow);
